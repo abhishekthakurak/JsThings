@@ -1,1 +1,1 @@
-# JsThings
+# contains some key concepts and problems
