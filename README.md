@@ -1,24 +1,36 @@
 # Contains some tricky interview questions and polyfills
 
 
-### polyfills it provide
+## polyfills it provide
 
-Javascript
+### Javascript
 
 apply
+<br/>
 arrayFilter
+<br/>
 arrayMap
+<br/>
 arrayReduce
+<br/>
 bind
+<br/>
 call
+<br/>
 debounce
+<br/>
 objectCreate
+<br/>
 promiseAll
+<br/>
 promiseRace
+<br/>
 setInterval
+<br/>
 throttle
 
-Redux
+### Redux
 
 combineReducers
+<br/>
 createStore
