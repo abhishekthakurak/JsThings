@@ -7,11 +7,11 @@
 
 apply
 <br/>
-arrayFilter
+array.filter
 <br/>
-arrayMap
+array.map
 <br/>
-arrayReduce
+array.reduce
 <br/>
 bind
 <br/>
@@ -19,11 +19,11 @@ call
 <br/>
 debounce
 <br/>
-objectCreate
+object.create
 <br/>
-promiseAll
+promise.all
 <br/>
-promiseRace
+promise.race
 <br/>
 setInterval
 <br/>
