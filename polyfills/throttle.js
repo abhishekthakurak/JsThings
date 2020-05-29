@@ -1,17 +1,15 @@
 const throttle = (func, limit) => {
-  let lastFunc
+  let lastTimeoutId
   let lastRan
   return function() {
-    const context = this
-    const args = arguments
     if (!lastRan) {
-      func.apply(context, args)
+      func.apply(this, arguments)
       lastRan = Date.now()
     } else {
-      clearTimeout(lastFunc)
-      lastFunc = setTimeout(function() {
+      clearTimeout(lastTimeoutId)
+      lastTimeoutId = setTimeout(function() {
         if ((Date.now() - lastRan) >= limit) {
-          func.apply(context, args)
+          func.apply(this, arguments)
           lastRan = Date.now()
         }
       }, limit - (Date.now() - lastRan))

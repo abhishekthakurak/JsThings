@@ -1,10 +1,12 @@
 // False Promises
 const firstPromise = () => {
-  return Promise.resolve('Data payload from the first promise...')
+  return new Promise((resolve)=>setTimeout(()=>{
+    resolve('Data payload from the first promise...')
+  }, 2000))
 }
 
 const secondPromise = () => {
-  return Promise.resolve('Promise has rejected...')
+  return Promise.resolve('Second Promise...')
 }
 
 function promiseAll(promises) {
@@ -21,12 +23,12 @@ function promiseAll(promises) {
     let resolvedCount = 0;
     
     /* Checks the status of the promise all statement */
-    function checkStatus(data) {
+    function checkStatus(data, index) {
       
      /* As each promise resolves we incriment the resolvedCount and 
       push the data from the resolved promise to the resolvedData
       store */
-      resolvedData.push(data);
+      resolvedData[index] = data;
       resolvedCount++;
       
       // Once all promises have been resolved, then we resolve the promise.
@@ -37,8 +39,8 @@ function promiseAll(promises) {
     
     /* Loops over each promise, calls it, and then checks the status whenever they resolve or fail. */
     promises.forEach((promise, i) => {
-      promise().then((data) => {
-        checkStatus(data)
+      promise.then((data) => {
+        checkStatus(data , i)
       }).catch((error) => {
         // If any of our promises fail, then we reject the promiseAll function.
         reject(error)
@@ -49,7 +51,7 @@ function promiseAll(promises) {
 
 /* Calls the promiseAll function, passing in other promises 
   within an array as the arguement. */
-promiseAll([firstPromise, secondPromise])
+promiseAll([firstPromise(), secondPromise()])
   .then((response) => {
     console.log(response)
   })

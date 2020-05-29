@@ -10,7 +10,7 @@ if (Array.prototype.map) {
         let array = this
         let newArray = []
         for (let index in array) {
-           newArray.push(callback(array[index], index, array))
+          newArray.push(callback(array[index], index, array))
         }
         return newArray
     }
