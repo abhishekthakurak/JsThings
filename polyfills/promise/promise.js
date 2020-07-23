@@ -1,7 +1,7 @@
 let checkForThen = arg => arg && arg.then && typeof arg.then === "function";
 class Promise {
   constructor(executor) {
-    this.result = undefined;
+    this.value = undefined;
     this.handlers = [];
     this.status = "PENDING";
 
