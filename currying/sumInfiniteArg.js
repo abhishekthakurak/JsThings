@@ -46,7 +46,7 @@ function getSumV3 (...args) {
     for (const item of args) {
       total += item
     }
-    if (args.length == 0) {
+    if (args.length === 0) {
       return total
     }
     return sum

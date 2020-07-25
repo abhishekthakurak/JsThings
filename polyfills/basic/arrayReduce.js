@@ -16,7 +16,7 @@ if (!Array.prototype.reduce) {
     if (arguments.length >= 2) { // initial value is present
       value = arguments[1] // set initial value
     } else {
-      if (len == 0) { // no inital value provided so assign first value as initial value
+      if (len === 0) { // no inital value provided so assign first value as initial value
         throw new TypeError('Reduce of empty array ' +
                   'with no initial value')
       }

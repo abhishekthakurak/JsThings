@@ -182,7 +182,7 @@ class Promise {
 }
 
 /* Example for creation */
-var P1 = new APromise((resolve, reject) => {
+var P1 = new Promise((resolve, reject) => {
   resolve(100)
 })
 // var P2 = new APromise((resolve, reject) => {
