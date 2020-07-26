@@ -12,20 +12,21 @@ emitter.on('consume', function (v) {
 })
 
 emitter.on('full', function (arr) {
-  consumer(arr).next()
+  consumer(arr)
 })
 emitter.on('empty', function (arr) {
-  producer(arr).next()
+  producer(arr)
 })
 
-function produce (arr, from = 0, to = 10) {
+function produce (arr, from = 0 , to = 10) {
   switch (from) {
     case to:
       emitter.emit('full', arr)
       return
     default:
       emitter.emit('produce', from)
-      produce((arr.push(from), arr), from + 1, to)
+      arr.push(from)
+      produce(arr, from + 1, to)
   }
 }
 
@@ -36,7 +37,8 @@ function consume (arr) {
       return
     default:
       emitter.emit('consume', arr[0])
-      consume((arr.shift(), arr))
+      arr.shift()
+      consume(arr)
   }
 }
 
@@ -56,4 +58,4 @@ function consumer (arr) {
 
 // Usage:
 // import { producer } from './producer_consumer.js'
-// producer([]).next()
+producer([])
