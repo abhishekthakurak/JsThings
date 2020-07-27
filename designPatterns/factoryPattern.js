@@ -3,10 +3,8 @@
  *
  */
 
-
 // A constructor for defining new cars
 function Car (options) {
-
   // some defaults
   this.doors = options.doors || 4
   this.state = options.state || 'brand new'
@@ -19,7 +17,6 @@ function Truck (options) {
   this.wheelSize = options.wheelSize || 'large'
   this.color = options.color || 'blue'
 }
-
 
 // FactoryExample.js
 
@@ -62,17 +59,18 @@ console.log(car instanceof Car)
 // Outputs: Car object of color "yellow", doors: 6 in a "brand new" state
 console.log(car)
 
-var movingTruck = carFactory.createVehicle( {
-    vehicleType: "truck",
-    state: "like new",
-    color: "red",
-    wheelSize: "small" } );
+var movingTruck = carFactory.createVehicle({
+  vehicleType: 'truck',
+  state: 'like new',
+  color: 'red',
+  wheelSize: 'small'
+})
 
 // Test to confirm our truck was created with the vehicleClass/prototype Truck
 
 // Outputs: true
-console.log( movingTruck instanceof Truck );
+console.log(movingTruck instanceof Truck)
 
 // Outputs: Truck object of color "red", a "like new" state
 // and a "small" wheelSize
-console.log( movingTruck );
+console.log(movingTruck)

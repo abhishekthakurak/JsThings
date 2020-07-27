@@ -1,4 +1,3 @@
-
 const axios = require('axios')
 
 class DataCache {
@@ -50,5 +49,5 @@ const unemploymentRateCache = new DataCache(getUnemploymentRate)
 
 unemploymentRateCache.getData()
   .then((result) => {
-  // do some stuff with result
+    // do some stuff with result
   })

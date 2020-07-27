@@ -18,3 +18,5 @@ const throttle = (func, limit) => {
     }
   }
 }
+
+export default throttle

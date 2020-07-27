@@ -18,7 +18,7 @@ emitter.on('empty', function (arr) {
   producer(arr)
 })
 
-function produce (arr, from = 0 , to = 10) {
+function produce (arr, from = 0, to = 10) {
   switch (from) {
     case to:
       emitter.emit('full', arr)

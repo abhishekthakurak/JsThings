@@ -31,3 +31,5 @@ var mySingleton = (function () {
     }
   }
 })()
+
+export default mySingleton
