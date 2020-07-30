@@ -7,14 +7,7 @@ class Promise {
 
     try {
       // executor is the function which takes 2 callbacks resolve, reject
-      executor(
-        value => {
-          this.resolve(value)
-        },
-        reason => {
-          this.reject(reason)
-        }
-      )
+      executor(this.resolve.bind(this), this.reject.bind(this))
     } catch (error) {
       // if the executor fails then also the promise rejects with error
       this.reject(error)
